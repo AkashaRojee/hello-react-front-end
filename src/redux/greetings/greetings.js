@@ -1,6 +1,6 @@
-import * as API from "./api";
+import getRandomGreeting from './api';
 
-const LOAD_RANDOM_GREETING = "greetings/random";
+const LOAD_RANDOM_GREETING = 'greetings/random';
 
 export const loadRandomGreeting = (payload) => ({
   type: LOAD_RANDOM_GREETING,
@@ -8,10 +8,8 @@ export const loadRandomGreeting = (payload) => ({
 });
 
 export const fetchRandomGreeting = () => async (dispatch) => {
-
-  const data = await API.getRandomGreeting();
+  const data = await getRandomGreeting();
   dispatch(loadRandomGreeting(data));
-
 };
 
 const initialState = {
